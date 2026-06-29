@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>六6班毕业纪念 - 首页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft Yahei", sans-serif;
+        }
+        body {
+            background-color: #f2f7ff;
+        }
+        /* 顶部导航栏 */
+        nav {
+            background: #255bc7;
+            display: flex;
+            align-items: center;
+            padding: 0 40px;
+            height: 60px;
+            gap: 35px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 17px;
+            transition: 0.2s;
+        }
+        nav a:hover {
+            color: #ffdd70;
+        }
+        .nav-title {
+            font-size: 22px;
+            font-weight: bold;
+            margin-right: 30px;
+        }
+        /* 弹窗遮罩 */
+        .mask {
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0,0,0,0.6);
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: none;
+            z-index: 999;
+            align-items: center;
+            justify-content: center;
+        }
+        .pop-box {
+            background: white;
+            width: 400px;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        .pop-box h3 {
+            font-size: 24px;
+            color: #c72525;
+            margin-bottom: 20px;
+        }
+        .pop-box button {
+            margin-top: 15px;
+            padding: 8px 24px;
+            border: none;
+            background: #255bc7;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        /* 主体容器 */
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 16px;
+            padding: 45px;
+            box-shadow: 0 2px 18px #c9ddff;
+        }
+        h1 {
+            text-align: center;
+            color: #255bc7;
+            margin-bottom: 15px;
+        }
+        .class-desc {
+            text-align: center;
+            color: #555;
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 45px;
+        }
+        h2 {
+            border-left: 6px solid #4089f5;
+            padding-left: 12px;
+            color: #204e9c;
+            margin: 35px 0 20px;
+        }
+        .card-wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 22px;
+        }
+        .card {
+            padding: 24px;
+            border-radius: 12px;
+        }
+        .card-bad {
+            background: #fff2f2;
+            border: 1px solid #ffbaba;
+        }
+        .card-study {
+            background: #fffbea;
+            border: 1px solid #ffe388;
+        }
+        .card-hot {
+            background: #ebfff7;
+            border: 1px solid #97e9d0;
+        }
+        .card h3 {
+            margin-bottom: 12px;
+            font-size: 20px;
+        }
+        .card p {
+            line-height: 1.7;
+            color: #333;
+        }
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            color: #777;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部导航 -->
+    <nav>
+        <a href="index.html" class="nav-title">六6班毕业纪念站</a>
+        <a href="index.html">首页</a>
+        <a href="javascript:openPop()">查看网页源代码</a>
+        <a href="match.html">班级赛事</a>
+        <a href="software.html">自制软件</a>
+    </nav>
+
+    <!-- 恶搞弹窗 -->
+    <div class="mask" id="popMask">
+        <div class="pop-box">
+            <h3>你看个屁</h3>
+            <p>想看源码自己去研究，不给你看！</p>
+            <button onclick="closePop()">follow the danm trian CJ!</button>
+        </div>
+    </div>
+
+    <!-- 主页内容 -->
+    <div class="container">
+        <h1>欢迎来到六6班专属纪念页面</h1>
+        <div class="class-desc">
+            我们是六年级6班，全班共43名同学<br>
+            全年级除3班外最热闹混乱的班级，即将毕业，记录我们的所有故事 see you tomorrow
+        </div>
+
+        <h2>班级代表人物</h2>
+        <div class="card-wrap">
+            <div class="card card-bad">
+                <h3>薛**（全班最讨厌学生）｜外号：小狗</h3>
+                <p>班里大家都比较反感的同学，为尊重隐私必须隐藏姓名。</p>
+            </div>
+            <div class="card card-study">
+                <h3>崔**（全班学习第一）｜外号：三体人/数学怪胎</h3>
+                <p>数学实力顶尖，从前语文薄弱，母亲经营辅导班；身材微胖,是个猪。</p>
+            </div>
+            <div class="card card-hot">
+                <h3>叶昊*（全班最受欢迎）｜外号：珍珠鸟/大眼萌妹</h3>
+                <p>班级人气天花板，虽不是班长，却是六6班代名词，日常大家聊天总会提到他。</p>
+            </div>
+        </div>
+
+        <footer>
+            2026 · 致43名即将毕业的六6班同学
+        </footer>
+    </div>
+
+    <script>
+        // 弹窗控制
+        function openPop() {
+            document.getElementById("popMask").style.display = "flex";
+        }
+        function closePop() {
+            document.getElementById("popMask").style.display = "none";
+        }
+    </script>
+</body>
+</html>
