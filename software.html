@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>班级赛事 - 六6班</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft Yahei", sans-serif;
+        }
+        body {
+            background-color: #f2f7ff;
+        }
+        nav {
+            background: #255bc7;
+            display: flex;
+            align-items: center;
+            padding: 0 40px;
+            height: 60px;
+            gap: 35px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 17px;
+            transition: 0.2s;
+        }
+        nav a:hover {
+            color: #ffdd70;
+        }
+        .nav-title {
+            font-size: 22px;
+            font-weight: bold;
+            margin-right: 30px;
+        }
+        .mask {
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0,0,0,0.6);
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: none;
+            z-index: 999;
+            align-items: center;
+            justify-content: center;
+        }
+        .pop-box {
+            background: white;
+            width: 400px;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        .pop-box h3 {
+            font-size: 24px;
+            color: #c72525;
+            margin-bottom: 20px;
+        }
+        .pop-box button {
+            margin-top: 15px;
+            padding: 8px 24px;
+            border: none;
+            background: #255bc7;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 16px;
+            padding: 45px;
+            box-shadow: 0 2px 18px #c9ddff;
+        }
+        h1 {
+            text-align: center;
+            color: #255bc7;
+            margin-bottom: 30px;
+        }
+        .event-block {
+            background: #f5f9ff;
+            padding: 26px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border-left: 8px solid #4089f5;
+        }
+        .event-block h2 {
+            margin-bottom: 12px;
+            color: #1f4d9c;
+        }
+        .event-block p {
+            line-height: 1.8;
+            font-size: 16px;
+            color: #333;
+        }
+        .award-box {
+            margin-top: 40px;
+        }
+        .award-item {
+            background: #fff9e0;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border: 1px solid #ffdd70;
+        }
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            color: #777;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="nav-title">六6班毕业纪念站</a>
+        <a href="index.html">首页</a>
+        <a href="javascript:openPop()">查看网页源代码</a>
+        <a href="match.html">班级赛事</a>
+        <a href="software.html">自制软件</a>
+    </nav>
+
+    <div class="mask" id="popMask">
+        <div class="pop-box">
+            <h3>你看个屁</h3>
+            <p>想看源码自己去研究，不给你看！</p>
+            <button onclick="closePop()">知道了</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>六6班赛事与荣誉奖状</h1>
+
+        <div class="event-block">
+            <h2>校运动会跳高趣事</h2>
+            <p>班里一名同学临时被选中参加跳高项目，此前从未接触过高跳。体育老师抓紧比赛前短短几分钟，争分夺秒现场教学动作要领，最终这名同学在校级班级联赛中拿到前15名，是全班值得纪念的名场面。</p>
+        </div>
+
+        <div class="award-box">
+            <h2>班级现存两张正式奖状</h2>
+            <div class="award-item">
+                <h3>奖状一：拔河比赛奖项</h3>
+                <p>全班齐心协力参与拔河赛事获得的集体荣誉。</p>
+            </div>
+            <div class="award-item">
+                <h3>奖状二：校级运动会团体奖状</h3>
+                <p>综合运动会各班表现颁发的班级荣誉证书。</p>
+            </div>
+        </div>
+
+        <footer>
+            2026 · 六6班全体43名同学
+        </footer>
+    </div>
+
+    <script>
+        function openPop() {
+            document.getElementById("popMask").style.display = "flex";
+        }
+        function closePop() {
+            document.getElementById("popMask").style.display = "none";
+        }
+    </script>
+</body>
+</html>
