@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>自制软件 - 六6班</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft Yahei", sans-serif;
+        }
+        body {
+            background-color: #f2f7ff;
+        }
+        nav {
+            background: #255bc7;
+            display: flex;
+            align-items: center;
+            padding: 0 40px;
+            height: 60px;
+            gap: 35px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 17px;
+            transition: 0.2s;
+        }
+        nav a:hover {
+            color: #ffdd70;
+        }
+        .nav-title {
+            font-size: 22px;
+            font-weight: bold;
+            margin-right: 30px;
+        }
+        .mask {
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0,0,0,0.6);
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: none;
+            z-index: 999;
+            align-items: center;
+            justify-content: center;
+        }
+        .pop-box {
+            background: white;
+            width: 400px;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        .pop-box h3 {
+            font-size: 24px;
+            color: #c72525;
+            margin-bottom: 20px;
+        }
+        .pop-box button {
+            margin-top: 15px;
+            padding: 8px 24px;
+            border: none;
+            background: #255bc7;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 16px;
+            padding: 45px;
+            box-shadow: 0 2px 18px #c9ddff;
+        }
+        h1 {
+            text-align: center;
+            color: #255bc7;
+            margin-bottom: 30px;
+        }
+        .soft-card {
+            background: #f0f5ff;
+            padding: 30px;
+            border-radius: 14px;
+            border: 1px solid #c2d6ff;
+        }
+        .soft-card h2 {
+            color: #1a468b;
+            margin-bottom: 18px;
+        }
+        .soft-card p {
+            line-height: 1.8;
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 12px;
+        }
+        .tip-text {
+            margin-top: 25px;
+            padding: 16px;
+            background: #fff2e8;
+            border-radius: 10px;
+            color: #b34c00;
+        }
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            color: #777;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="nav-title">六6班毕业纪念站</a>
+        <a href="index.html">首页</a>
+        <a href="javascript:openPop()">查看网页源代码</a>
+        <a href="match.html">班级赛事</a>
+        <a href="software.html">自制软件</a>
+    </nav>
+
+    <div class="mask" id="popMask">
+        <div class="pop-box">
+            <h3>你看个屁</h3>
+            <p>想看源码自己去研究，不给你看！</p>
+            <button onclick="closePop()">知道了</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>我的自制程序项目</h1>
+        <div class="soft-card">
+            <h2>Windows XP 复活工具（Python打包EXE）</h2>
+            <p>1. 开发基础：使用Python编写完整程序，打包为独立exe可执行文件，内置所需运行库自动安装逻辑。</p>
+            <p>2. 核心功能：程序运行后自动下载、部署Windows XP运行依赖组件，一键实现XP环境复活。</p>
+            <p>3. 附加计划：预留老游戏自动下载模块，目标内置《侠盗猎车手：圣安地列斯》自动安装功能。</p>
+            <div class="tip-text">
+                目前待解决问题：缺少系统组件、老游戏的稳定下载直链，暂时无法完成完整下载功能，后续找到资源链接后更新程序。
+            </div>
+        </div>
+
+        <footer>
+            六6班 · 个人编程项目记录
+        </footer>
+    </div>
+
+    <script>
+        function openPop() {
+            document.getElementById("popMask").style.display = "flex";
+        }
+        function closePop() {
+            document.getElementById("popMask").style.display = "none";
+        }
+    </script>
+</body>
+</html>
