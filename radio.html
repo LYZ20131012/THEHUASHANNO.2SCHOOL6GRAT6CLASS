@@ -108,10 +108,12 @@
             background: #fff;
             border-radius: 8px;
             margin-bottom: 12px;
+            gap:12px;
         }
         .song-name {
             font-size: 16px;
             color: #222;
+            flex-grow:1;
         }
         .play-btn {
             padding: 6px 18px;
@@ -120,6 +122,14 @@
             border: none;
             border-radius: 6px;
             cursor: pointer;
+        }
+        .link-btn {
+            padding: 6px 14px;
+            background:#666;
+            color:#fff;
+            text-decoration:none;
+            border-radius:6px;
+            font-size:14px;
         }
         .tip-text {
             margin-top: 25px;
@@ -138,12 +148,13 @@
     </style>
 </head>
 <body>
+    <!-- 导航已修正：赛事/计划软件顺序 -->
     <nav>
         <a href="index.html" class="nav-title">六6班毕业纪念站</a>
         <a href="index.html">首页</a>
-        <a href="software.html">计划软件</a>
-        <a href="match.html">赛事</a>
-        <a href="radio.html">游戏电台</a>
+        <a href="match.html">计划软件</a>
+        <a href="software.html">赛事</a>
+        <a href="radio.html">游戏电台(new!)</a>
     </nav>
 
     <!-- 全局公告弹窗（和首页共用notice.json通知） -->
@@ -158,19 +169,18 @@
     <div class="container">
         <h1>🎧 GTA圣安地列斯 经典游戏电台</h1>
 
-        <!-- KDST 电台板块，图标插入位已预留 -->
+        <!-- KDST 电台图标预留位，上传图片后去掉注释即可显示 -->
         <div class="radio-card">
-            <!-- 这里粘贴图标代码，上传图片后启用 -->
             <!-- <img src="images/kdst-logo.jpg" alt="KDST电台图标" style="width:220px;display:block;margin:0 auto 20px;border-radius:10px;"> -->
             <h2>KDST - Dustlands Radio（荒漠经典摇滚电台）</h2>
             <div class="radio-desc">
                 圣安地列斯原版荒漠专属电台，主打70-90年代经典硬摇滚、布鲁斯摇滚，游戏开车穿越沙漠公路标配BGM，DJ由枪炮与玫瑰主唱Axl Rose配音。
-                当前仅还原原版全部17首曲目，音频链接待补充。
+                当前仅还原原版全部17首曲目，音频直链待补充；无本地音源的歌曲可点击「前往音源」跳转网页收听。
             </div>
 
-            <!-- 全部曲目占位，src空白你后续填音频直链 -->
+            <!-- 曲目结构：原生播放按钮+网页跳转按钮双适配 -->
             <div class="song-item">
-                <span class="song-name">1. Foghat - Slow Ride</span>
+                <span class="song-name">1. Foghat - Slow Ride 版权保护无法播放</span>
                 <audio id="song1" src="">
                 <button class="play-btn" onclick="togglePlay('song1')">播放</button>
             </div>
@@ -178,19 +188,21 @@
                 <span class="song-name">2. Creedence Clearwater Revival - Green River</span>
                 <audio id="song2" src="">
                 <button class="play-btn" onclick="togglePlay('song2')">播放</button>
+                <a class="link-btn" target="_blank" href="//music.163.com/outchain/player?type=2&id=2076600995&auto=0&height=32">网易云音源</a>
             </div>
             <div class="song-item">
                 <span class="song-name">3. Heart - Barracuda</span>
                 <audio id="song3" src="">
                 <button class="play-btn" onclick="togglePlay('song3')">播放</button>
+                <a class="link-btn" target="_blank" href="//music.163.com/outchain/player?type=2&id=5049657&auto=0&height=66">网易云音源</a>
             </div>
             <div class="song-item">
-                <span class="song-name">4. KISS - Strutter</span>
+                <span class="song-name">4. KISS - Strutter 版权原因无法播放</span>
                 <audio id="song4" src="">
                 <button class="play-btn" onclick="togglePlay('song4')">播放</button>
             </div>
             <div class="song-item">
-                <span class="song-name">5. Toto - Hold the Line</span>
+                <span class="song-name">5. Toto - Hold the Line 版权原因无法播放</span>
                 <audio id="song5" src="">
                 <button class="play-btn" onclick="togglePlay('song5')">播放</button>
             </div>
@@ -198,65 +210,68 @@
                 <span class="song-name">6. Rod Stewart - Young Turks</span>
                 <audio id="song6" src="">
                 <button class="play-btn" onclick="togglePlay('song6')">播放</button>
+                <a class="link-btn" target="_blank" href="https://www.bilibili.com/video/BV1RZ4y117aF/?share_source=copy_web&vd_source=bb53955a3a068ccbb3edbb9018545aec">B站音源</a>
             </div>
             <div class="song-item">
                 <span class="song-name">7. Tom Petty - Runnin' Down a Dream</span>
                 <audio id="song7" src="">
                 <button class="play-btn" onclick="togglePlay('song7')">播放</button>
+                <a class="link-btn" target="_blank" href="https://www.bilibili.com/video/BV17JTi6DEjA/?share_source=copy_web&vd_source=bb53955a3a068ccbb3edbb9018545aec">B站音源</a>
             </div>
             <div class="song-item">
-                <span class="song-name">8. Joe Cocker - Woman to Woman</span>
+                <span class="song-name">8. Joe Cocker - Woman to Woman 未完成</span>
                 <audio id="song8" src="">
                 <button class="play-btn" onclick="togglePlay('song8')">播放</button>
             </div>
             <div class="song-item">
-                <span class="song-name">9. Humble Pie - Get Down to It</span>
+                <span class="song-name">9. Humble Pie - Get Down to It 未完成</span>
                 <audio id="song9" src="">
                 <button class="play-btn" onclick="togglePlay('song9')">播放</button>
             </div>
             <div class="song-item">
-                <span class="song-name">10. Grand Funk Railroad - Some Kind of Wonderful</span>
+                <span class="song-name">10. Grand Funk Railroad - Some Kind of Wonderful 未完成</span>
                 <audio id="song10" src="">
                 <button class="play-btn" onclick="togglePlay('song10')">播放</button>
             </div>
             <div class="song-item">
-                <span class="song-name">11. Lynyrd Skynyrd - Free Bird</span>
+                <span class="song-name">11. Lynyrd Skynyrd - Free Bird 未完成</span>
                 <audio id="song11" src="">
                 <button class="play-btn" onclick="togglePlay('song11')">播放</button>
             </div>
             <div class="song-item">
-                <span class="song-name">12. America - A Horse With No Name</span>
+                <span class="song-name">12. America - A Horse With No Name 未完成</span>
                 <audio id="song12" src="">
                 <button class="play-btn" onclick="togglePlay('song12')">播放</button>
             </div>
             <div class="song-item">
-                <span class="song-name">13. The Who - Eminence Front</span>
+                <span class="song-name">13. The Who - Eminence Front 未完成</span>
                 <audio id="song13" src="">
                 <button class="play-btn" onclick="togglePlay('song13')">播放</button>
             </div>
             <div class="song-item">
-                <span class="song-name">14. Boston - Smokin'</span>
+                <span class="song-name">14. Boston - Smokin' 未完成</span>
                 <audio id="song14" src="">
                 <button class="play-btn" onclick="togglePlay('song14')">播放</button>
             </div>
             <div class="song-item">
-                <span class="song-name">15. David Bowie - Somebody Up There Likes Me</span>
+                <span class="song-name">15. David Bowie - Somebody Up There Likes Me 未完成</span>
                 <audio id="song15" src="">
                 <button class="play-btn" onclick="togglePlay('song15')">播放</button>
             </div>
             <div class="song-item">
-                <span class="song-name">16. Eddie Money - Two Tickets to Paradise</span>
+                <span class="song-name">16. Eddie Money - Two Tickets to Paradise 未完成</span>
                 <audio id="song16" src="">
                 <button class="play-btn" onclick="togglePlay('song16')">播放</button>
             </div>
             <div class="song-item">
-                <span class="song-name">17. Billy Idol - White Wedding</span>
+                <span class="song-name">17. Billy Idol - White Wedding 未完成</span>
                 <audio id="song17" src="">
                 <button class="play-btn" onclick="togglePlay('song17')">播放</button>
             </div>
 
             <div class="tip-text">
-                ⚠️ 版权免责提示：所有音频曲目版权归属Rockstar Games及对应音乐人，本站仅怀旧展示，无商用行为；音频链接待后续补充完整。
+                ⚠️ 版权免责提示：所有音频曲目版权归属Rockstar Games及对应音乐人，本站仅怀旧展示，无商用行为；音频直链待后续补充完整。
+                无本地音源时，可点击「网易云音源/B站音源」跳转对应网页播放歌曲。
             </div>
         </div>
 
@@ -278,6 +293,11 @@
         let currentAudio = null;
         function togglePlay(id) {
             let audio = document.getElementById(id);
+            // 无音频链接时弹出提示
+            if(!audio.src){
+                alert("暂无本地音频直链，请点击右侧音源按钮跳转网页收听！");
+                return;
+            }
             if(currentAudio && currentAudio !== audio) currentAudio.pause();
             if(audio.paused){
                 audio.play();
