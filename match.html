@@ -122,6 +122,20 @@
             color:#d92121;
             font-weight:bold;
         }
+        .download-btn {
+            display: inline-block;
+            margin-top: 16px;
+            padding: 12px 30px;
+            background: #255bc7;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 17px;
+            transition: 0.2s;
+        }
+        .download-btn:hover {
+            background: #1a468b;
+        }
         footer {
             margin-top: 60px;
             text-align: center;
@@ -136,8 +150,8 @@
         <a href="index.html" class="nav-title">六6班毕业纪念站</a>
         <a href="index.html">首页</a>
         <a href="javascript:openPop()">查看网页源代码</a>
-        <a href="match.html">计划软件</a>
-        <a href="software.html">赛事</a>
+        <a href="match.html">赛事</a>
+        <a href="software.html">计划软件</a>
     </nav>
 
     <div class="mask" id="popMask">
@@ -150,11 +164,28 @@
 
     <div class="container">
         <h1>我的自制程序项目</h1>
+        <!-- 新增：装机必备一键下载工具板块 -->
         <div class="soft-card">
-            <h2>Windows XP 复活工具（Python打包EXE）</h2>
-            <p>1. 开发基础：使用Python编写完整程序，打包为独立exe可执行文件，内置所需运行库自动安装逻辑。</p>
-            <p>2. 核心功能：程序运行后自动下载、部署Windows XP运行依赖组件，一键实现XP环境复活。</p>
-            <p>3. 附加计划：预留老游戏自动下载模块，目标内置《侠盗猎车手：圣安地列斯》自动安装功能。</p>
+            <h2>💻 装机必备一键下载工具</h2>
+            <p>1. 程序功能：自动抓取浏览器、办公软件、解压工具等多款装机软件官方安装包，全程无捆绑、无广告，规避各类流氓程序与木马。</p>
+            <p>2. 适配系统：Windows 7 / Windows 10 / Windows 11 全平台兼容运行</p>
+            <p>3. 说明：程序已正式开放下载，点击下方按钮直接获取exe安装包
+                ☢⚠☢下载很慢,会有403报错,目前处于测试阶段
+              </p>
+            <a class="download-btn" target="_blank" href="https://github.com/LYZ20131012/THEHUASHANNO.2SCHOOL6GRAT6CLASS/releases/download/1.0.0/ZHUANGJIBIBEI.exe">
+                立即下载 装机必备工具
+            </a>
+            <div class="tip-text">
+                ⚠️ 安全提示：下载完成后建议用火绒安全软件扫描程序再运行，保障电脑安全。
+            </div>
+        </div>
+        <!-- 新增板块结束 -->
+
+        <div class="soft-card">
+            <h2>Windows 7 复活工具（Python打包EXE）</h2>
+            <p>1. 开发基础：使用Python编写完整程序，打包为独立exe可执行文件，内置所需运行库自动安装逻辑。下载404,403是正常的</p>
+            <p>2. 核心功能：程序运行后自动下载、部署Windows 7装机必备软件，一键实现7环境复活。已完成</p>
+            <p>3. 附加计划：预留老游戏自动下载模块，目标内置《侠盗猎车手：圣安地列斯》自动安装功能 未完成。</p>
             <div class="tip-text">
                 目前待解决问题：缺少系统组件、老游戏的稳定下载直链，暂时无法完成完整下载功能，后续找到资源链接后更新程序。
             </div>
