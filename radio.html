@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>GTA电台 - 六6班</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft Yahei", sans-serif;
+        }
+        body {
+            background-color: #f2f7ff;
+        }
+        nav {
+            background: #255bc7;
+            display: flex;
+            align-items: center;
+            padding: 0 40px;
+            height: 60px;
+            gap: 35px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 17px;
+            transition: 0.2s;
+        }
+        nav a:hover {
+            color: #ffdd70;
+        }
+        .nav-title {
+            font-size: 22px;
+            font-weight: bold;
+            margin-right: 30px;
+        }
+        .mask {
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0,0,0,0.6);
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: none;
+            z-index: 999;
+            align-items: center;
+            justify-content: center;
+        }
+        .pop-box {
+            background: white;
+            width: 400px;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        .pop-box h3 {
+            font-size: 24px;
+            color: #c72525;
+            margin-bottom: 20px;
+        }
+        .pop-box button {
+            margin-top: 15px;
+            padding: 8px 24px;
+            border: none;
+            background: #255bc7;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 16px;
+            padding: 45px;
+            box-shadow: 0 2px 18px #c9ddff;
+        }
+        h1 {
+            text-align: center;
+            color: #255bc7;
+            margin-bottom: 30px;
+        }
+        .radio-card {
+            background: #fff6e8;
+            padding: 30px;
+            border-radius: 14px;
+            border: 1px solid #ffd9b3;
+            margin-bottom: 25px;
+        }
+        .radio-card h2 {
+            color: #914600;
+            margin-bottom: 18px;
+            text-align: center;
+        }
+        .radio-desc {
+            line-height: 1.8;
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 20px;
+            text-align:center;
+        }
+        .song-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 16px;
+            background: #fff;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+        .song-name {
+            font-size: 16px;
+            color: #222;
+        }
+        .play-btn {
+            padding: 6px 18px;
+            background: #255bc7;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .tip-text {
+            margin-top: 25px;
+            padding: 16px;
+            background: #fff2e8;
+            border-radius: 10px;
+            color: #b34c00;
+        }
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            color: #777;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="nav-title">六6班毕业纪念站</a>
+        <a href="index.html">首页</a>
+        <a href="software.html">计划软件</a>
+        <a href="match.html">赛事</a>
+        <a href="radio.html">游戏电台</a>
+    </nav>
+
+    <!-- 全局公告弹窗（和首页共用notice.json通知） -->
+    <div class="mask" id="popMask">
+        <div class="pop-box">
+            <h3>网站公告</h3>
+            <p id="noticeText">暂无通知</p>
+            <button onclick="closePop()">知道了</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>🎧 GTA圣安地列斯 经典游戏电台</h1>
+
+        <!-- KDST 电台板块，图标插入位已预留 -->
+        <div class="radio-card">
+            <!-- 这里粘贴图标代码，上传图片后启用 -->
+            <!-- <img src="images/kdst-logo.jpg" alt="KDST电台图标" style="width:220px;display:block;margin:0 auto 20px;border-radius:10px;"> -->
+            <h2>KDST - Dustlands Radio（荒漠经典摇滚电台）</h2>
+            <div class="radio-desc">
+                圣安地列斯原版荒漠专属电台，主打70-90年代经典硬摇滚、布鲁斯摇滚，游戏开车穿越沙漠公路标配BGM，DJ由枪炮与玫瑰主唱Axl Rose配音。
+                当前仅还原原版全部17首曲目，音频链接待补充。
+            </div>
+
+            <!-- 全部曲目占位，src空白你后续填音频直链 -->
+            <div class="song-item">
+                <span class="song-name">1. Foghat - Slow Ride</span>
+                <audio id="song1" src="">
+                <button class="play-btn" onclick="togglePlay('song1')">播放</button>
+            </div>
+            <div class="song-item">
+                <span class="song-name">2. Creedence Clearwater Revival - Green River</span>
+                <audio id="song2" src="">
+                <button class="play-btn" onclick="togglePlay('song2')">播放</button>
+            </div>
+            <div class="song-item">
+                <span class="song-name">3. Heart - Barracuda</span>
+                <audio id="song3" src="">
+                <button class="play-btn" onclick="togglePlay('song3')">播放</button>
+            </div>
+            <div class="song-item">
+                <span class="song-name">4. KISS - Strutter</span>
+                <audio id="song4" src="">
+                <button class="play-btn" onclick="togglePlay('song4')">播放</button>
+            </div>
+            <div class="song-item">
+                <span class="song-name">5. Toto - Hold the Line</span>
+                <audio id="song5" src="">
+                <button class="play-btn" onclick="togglePlay('song5')">播放</button>
+            </div>
+            <div class="song-item">
+                <span class="song-name">6. Rod Stewart - Young Turks</span>
+                <audio id="song6" src="">
+                <button class="play-btn" onclick="togglePlay('song6')">播放</button>
+            </div>
+            <div class="song-item">
+                <span class="song-name">7. Tom Petty - Runnin' Down a Dream</span>
+                <audio id="song7" src="">
+                <button class="play-btn" onclick="togglePlay('song7')">播放</button>
+            </div>
+            <div class="song-item">
+                <span class="song-name">8. Joe Cocker - Woman to Woman</span>
+                <audio id="song8" src="">
+                <button class="play-btn" onclick="togglePlay('song8')">播放</button>
+            </div>
+            <div class="song-item">
+                <span class="song-name">9. Humble Pie - Get Down to It</span>
+                <audio id="song9" src="">
+                <button class="play-btn" onclick="togglePlay('song9')">播放</button>
+            </div>
+            <div class="song-item">
+                <span class="song-name">10. Grand Funk Railroad - Some Kind of Wonderful</span>
+                <audio id="song10" src="">
+                <button class="play-btn" onclick="togglePlay('song10')">播放</button>
+            </div>
+            <div class="song-item">
+                <span class="song-name">11. Lynyrd Skynyrd - Free Bird</span>
+                <audio id="song11" src="">
+                <button class="play-btn" onclick="togglePlay('song11')">播放</button>
+            </div>
+            <div class="song-item">
+                <span class="song-name">12. America - A Horse With No Name</span>
+                <audio id="song12" src="">
+                <button class="play-btn" onclick="togglePlay('song12')">播放</button>
+            </div>
+            <div class="song-item">
+                <span class="song-name">13. The Who - Eminence Front</span>
+                <audio id="song13" src="">
+                <button class="play-btn" onclick="togglePlay('song13')">播放</button>
+            </div>
+            <div class="song-item">
+                <span class="song-name">14. Boston - Smokin'</span>
+                <audio id="song14" src="">
+                <button class="play-btn" onclick="togglePlay('song14')">播放</button>
+            </div>
+            <div class="song-item">
+                <span class="song-name">15. David Bowie - Somebody Up There Likes Me</span>
+                <audio id="song15" src="">
+                <button class="play-btn" onclick="togglePlay('song15')">播放</button>
+            </div>
+            <div class="song-item">
+                <span class="song-name">16. Eddie Money - Two Tickets to Paradise</span>
+                <audio id="song16" src="">
+                <button class="play-btn" onclick="togglePlay('song16')">播放</button>
+            </div>
+            <div class="song-item">
+                <span class="song-name">17. Billy Idol - White Wedding</span>
+                <audio id="song17" src="">
+                <button class="play-btn" onclick="togglePlay('song17')">播放</button>
+            </div>
+
+            <div class="tip-text">
+                ⚠️ 版权免责提示：所有音频曲目版权归属Rockstar Games及对应音乐人，本站仅怀旧展示，无商用行为；音频链接待后续补充完整。
+            </div>
+        </div>
+
+        <footer>
+            六6班 · GTA怀旧电台专区
+        </footer>
+    </div>
+
+    <script>
+        // 公告弹窗开关
+        function openPop() {
+            document.getElementById("popMask").style.display = "flex";
+        }
+        function closePop() {
+            document.getElementById("popMask").style.display = "none";
+        }
+
+        // 音频互斥播放：同一时间只放一首歌
+        let currentAudio = null;
+        function togglePlay(id) {
+            let audio = document.getElementById(id);
+            if(currentAudio && currentAudio !== audio) currentAudio.pause();
+            if(audio.paused){
+                audio.play();
+                currentAudio = audio;
+            }else{
+                audio.pause();
+                currentAudio = null;
+            }
+        }
+
+        // 全局5秒轮询公告，和首页同步通知弹窗
+        function checkNotice(){
+            fetch('notice.json?t='+new Date().getTime())
+                .then(res=>res.json())
+                .then(data=>{
+                    if(data.show){
+                        document.getElementById('noticeText').innerText = data.content;
+                        openPop();
+                    }
+                })
+        }
+        window.onload = function(){
+            checkNotice();
+            setInterval(checkNotice,5000);
+        }
+    </script>
+</body>
+</html>
