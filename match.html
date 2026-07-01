@@ -86,6 +86,7 @@
             padding: 30px;
             border-radius: 14px;
             border: 1px solid #c2d6ff;
+            margin-bottom: 25px;
         }
         .soft-card h2 {
             color: #1a468b;
@@ -103,6 +104,23 @@
             background: #fff2e8;
             border-radius: 10px;
             color: #b34c00;
+        }
+        .game-link a {
+            color: #255bc7;
+            text-decoration: none;
+            word-break: break-all;
+        }
+        .game-link a:hover {
+            text-decoration: underline;
+        }
+        .copyright-note {
+            font-size: 14px;
+            color: #555;
+            margin-top:5px;
+        }
+        .warn-red {
+            color:#d92121;
+            font-weight:bold;
         }
         footer {
             margin-top: 60px;
@@ -142,6 +160,26 @@
             </div>
         </div>
 
+        <!-- 【新增：云游戏快捷访问板块 完整插入在这里】 -->
+        <div class="soft-card">
+            <h2>🎮 云游戏快捷访问导航</h2>
+            <p class="warn-red">⚠️ 重要免责：以下仅为官方网页快捷跳转链接，本站仅提供导航，不持有任何游戏版权，所有游戏版权归对应厂商所有！</p>
+            
+            <p class="game-link">🔹 云·原神 官方云游戏：<a href="https://ys.mihoyo.com/cloud/m/" target="_blank">https://ys.mihoyo.com/cloud/m/</a></p>
+            <p class="copyright-note">版权标注：《原神》《云原神》版权所有 ©米哈游(HoYoverse)</p>
+
+            <p class="game-link">🔹 云·崩坏：星穹铁道（云崩铁）：<a href="https://sr.mihoyo.com/cloud/" target="_blank">https://sr.mihoyo.com/cloud/</a></p>
+            <p class="copyright-note">版权标注：《崩坏：星穹铁道》《云·星穹铁道》版权所有 ©米哈游(HoYoverse)</p>
+
+            <p class="game-link">🔹 GTA罪恶都市 网页版快捷入口：<a href="https://dos.zone/grand-theft-auto-vice-city/" target="_blank">https://dos.zone/grand-theft-auto-vice-city/</a></p>
+            <p class="copyright-note">提示：该网页版为玩家自制移植，非官方正版；原版罪恶都市版权归属Rockstar Games(R星)</p>
+
+            <div class="tip-text">
+                📜 整体版权说明：本页面所有外链仅做快捷访问，无游戏著作权、运营权；若版权方要求下架链接，可随时联系删除。
+            </div>
+        </div>
+        <!-- 新增板块结束 -->
+
         <footer>
             六6班 · 软件记录
         </footer>
@@ -154,38 +192,6 @@
         function closePop() {
             document.getElementById("popMask").style.display = "none";
         }
-        <!-- ========== 新增云游戏快捷板块 直接粘贴到内容区 ========== -->
-<div style="background:#f5f7fa; border:1px solid #e0e5ec; border-radius:12px; padding:20px; margin:20px 0;">
-    <h2 style="color:#222; margin-top:0; border-left:4px solid #1677ff; padding-left:12px;">🎮 云游戏快捷访问专区</h2>
-    <p style="color:#f5222d; font-weight:bold;">⚠️ 免责声明：以下仅为官方快捷跳转链接，本页面只提供导航，不拥有任何游戏版权，所有版权归对应厂商所有</p>
-
-    <div style="margin:15px 0; padding:12px; background:#fff; border-radius:8px;">
-        <h3 style="margin:0 0 8px 0; font-size:16px;">1. 云·原神 官方网页版</h3>
-        <a href="https://ys.mihoyo.com/cloud/m/" target="_blank" style="color:#1677ff; text-decoration:none;">https://ys.mihoyo.com/cloud/m/</a>
-        <p style="margin:6px 0 0 0; font-size:14px; color:#666;">版权归属：《原神》《云原神》版权所有 ©米哈游(HoYoverse)</p>
-    </div>
-
-    <div style="margin:15px 0; padding:12px; background:#fff; border-radius:8px;">
-        <h3 style="margin:0 0 8px 0; font-size:16px;">2. 云·崩坏：星穹铁道（云崩铁）官方网页版</h3>
-        <a href="https://sr.mihoyo.com/cloud/" target="_blank" style="color:#1677ff; text-decoration:none;">https://sr.mihoyo.com/cloud/</a>
-        <p style="margin:6px 0 0 0; font-size:14px; color:#666;">版权归属：《崩坏：星穹铁道》《云·星穹铁道》版权所有 ©米哈游(HoYoverse)</p>
-    </div>
-
-    <div style="margin:15px 0; padding:12px; background:#fff; border-radius:8px;">
-        <h3 style="margin:0 0 8px 0; font-size:16px;">3. GTA罪恶都市 网页版快捷入口</h3>
-        <a href="https://dos.zone/grand-theft-auto-vice-city/" target="_blank" style="color:#1677ff; text-decoration:none;">https://dos.zone/grand-theft-auto-vice-city/</a>
-        <p style="margin:6px 0 0 0; font-size:14px; color:#666;">提示：此为玩家自制网页移植，非官方正版；原版罪恶都市版权归属Rockstar Games(R星)</p>
-    </div>
-
-    <div style="margin-top:18px; padding-top:15px; border-top:1px dashed #ccc; font-size:14px; color:#555;">
-        <strong>📜 整体版权说明：</strong><br>
-        1. 本页面仅提供外部链接快捷导航，无游戏著作权、运营权；<br>
-        2. 米哈游旗下云游戏全部知识产权归属米哈游；<br>
-        3. 若版权方需要下架链接，可随时联系删除。
-    </div>
-</div>
-<!-- ========== 板块结束 ========== -->
-
     </script>
 </body>
 </html>
