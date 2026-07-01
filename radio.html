@@ -123,13 +123,15 @@
             border-radius: 6px;
             cursor: pointer;
         }
-        .link-btn {
-            padding: 6px 14px;
-            background:#666;
+        /* 左侧音源跳转按钮样式 */
+        .source-btn {
+            padding: 6px 12px;
+            background:#777;
             color:#fff;
             text-decoration:none;
             border-radius:6px;
             font-size:14px;
+            white-space:nowrap;
         }
         .tip-text {
             margin-top: 25px;
@@ -148,16 +150,15 @@
     </style>
 </head>
 <body>
-    <!-- 导航已修正：赛事/计划软件顺序 -->
     <nav>
         <a href="index.html" class="nav-title">六6班毕业纪念站</a>
         <a href="index.html">首页</a>
-        <a href="match.html">计划软件</a>
-        <a href="software.html">赛事</a>
-        <a href="radio.html">游戏电台(new!)</a>
+        <a href="match.html">赛事</a>
+        <a href="software.html">计划软件</a>
+        <a href="radio.html">游戏电台</a>
     </nav>
 
-    <!-- 全局公告弹窗（和首页共用notice.json通知） -->
+    <!-- 全局公告弹窗 -->
     <div class="mask" id="popMask">
         <div class="pop-box">
             <h3>网站公告</h3>
@@ -169,109 +170,121 @@
     <div class="container">
         <h1>🎧 GTA圣安地列斯 经典游戏电台</h1>
 
-        <!-- KDST 电台图标预留位，上传图片后去掉注释即可显示 -->
         <div class="radio-card">
             <!-- <img src="images/kdst-logo.jpg" alt="KDST电台图标" style="width:220px;display:block;margin:0 auto 20px;border-radius:10px;"> -->
             <h2>KDST - Dustlands Radio（荒漠经典摇滚电台）</h2>
             <div class="radio-desc">
                 圣安地列斯原版荒漠专属电台，主打70-90年代经典硬摇滚、布鲁斯摇滚，游戏开车穿越沙漠公路标配BGM，DJ由枪炮与玫瑰主唱Axl Rose配音。
-                当前仅还原原版全部17首曲目，音频直链待补充；无本地音源的歌曲可点击「前往音源」跳转网页收听。
+                当前仅还原原版全部17首曲目，音频链接待补充。
             </div>
 
-            <!-- 曲目结构：原生播放按钮+网页跳转按钮双适配 -->
+            <!-- 布局顺序：【左侧音源按钮】→歌名→【右侧播放按钮】 -->
             <div class="song-item">
+                <a class="source-btn" target="_blank" href="">音源跳转</a>
                 <span class="song-name">1. Foghat - Slow Ride 版权保护无法播放</span>
                 <audio id="song1" src="">
                 <button class="play-btn" onclick="togglePlay('song1')">播放</button>
             </div>
             <div class="song-item">
+                <a class="source-btn" target="_blank" href="//music.163.com/outchain/player?type=2&id=2076600995&auto=0&height=32">音源跳转</a>
                 <span class="song-name">2. Creedence Clearwater Revival - Green River</span>
                 <audio id="song2" src="">
                 <button class="play-btn" onclick="togglePlay('song2')">播放</button>
-                <a class="link-btn" target="_blank" href="//music.163.com/outchain/player?type=2&id=2076600995&auto=0&height=32">网易云音源</a>
             </div>
             <div class="song-item">
+                <a class="source-btn" target="_blank" href="//music.163.com/outchain/player?type=2&id=5049657&auto=0&height=66">音源跳转</a>
                 <span class="song-name">3. Heart - Barracuda</span>
                 <audio id="song3" src="">
                 <button class="play-btn" onclick="togglePlay('song3')">播放</button>
-                <a class="link-btn" target="_blank" href="//music.163.com/outchain/player?type=2&id=5049657&auto=0&height=66">网易云音源</a>
             </div>
             <div class="song-item">
+                <a class="source-btn" target="_blank" href="">音源跳转</a>
                 <span class="song-name">4. KISS - Strutter 版权原因无法播放</span>
                 <audio id="song4" src="">
                 <button class="play-btn" onclick="togglePlay('song4')">播放</button>
             </div>
             <div class="song-item">
-                <span class="song-name">5. Toto - Hold the Line 版权原因无法播放</span>
+                <a class="source-btn" target="_blank" href="">音源跳转</a>
+                <span class="song-name">5. Toto - Hold the Line版权原因无法播放</span>
                 <audio id="song5" src="">
                 <button class="play-btn" onclick="togglePlay('song5')">播放</button>
             </div>
             <div class="song-item">
+                <a class="source-btn" target="_blank" href="https://www.bilibili.com/video/BV1RZ4y117aF/?share_source=copy_web&vd_source=bb53955a3a068ccbb3edbb9018545aec">音源跳转</a>
                 <span class="song-name">6. Rod Stewart - Young Turks</span>
                 <audio id="song6" src="">
                 <button class="play-btn" onclick="togglePlay('song6')">播放</button>
-                <a class="link-btn" target="_blank" href="https://www.bilibili.com/video/BV1RZ4y117aF/?share_source=copy_web&vd_source=bb53955a3a068ccbb3edbb9018545aec">B站音源</a>
             </div>
             <div class="song-item">
-                <span class="song-name">7. Tom Petty - Runnin' Down a Dream</span>
+                <a class="source-btn" target="_blank" href="https://www.bilibili.com/video/BV17JTi6DEjA/?share_source=copy_web&vd_source=bb53955a3a068ccbb3edbb9018545aec">音源跳转</a>
+                <span class="song-name">7. Tom Petty - Runnin' Down a Dream 但</span>
                 <audio id="song7" src="">
                 <button class="play-btn" onclick="togglePlay('song7')">播放</button>
-                <a class="link-btn" target="_blank" href="https://www.bilibili.com/video/BV17JTi6DEjA/?share_source=copy_web&vd_source=bb53955a3a068ccbb3edbb9018545aec">B站音源</a>
             </div>
             <div class="song-item">
-                <span class="song-name">8. Joe Cocker - Woman to Woman 未完成</span>
+                <a class="source-btn" target="_blank" href="">音源跳转</a>
+                <span class="song-name">8. Joe Cocker - Woman to Woman未完成</span>
                 <audio id="song8" src="">
                 <button class="play-btn" onclick="togglePlay('song8')">播放</button>
             </div>
             <div class="song-item">
-                <span class="song-name">9. Humble Pie - Get Down to It 未完成</span>
+                <a class="source-btn" target="_blank" href="">音源跳转</a>
+                <span class="song-name">9. Humble Pie - Get Down to It未完成</span>
                 <audio id="song9" src="">
                 <button class="play-btn" onclick="togglePlay('song9')">播放</button>
             </div>
             <div class="song-item">
-                <span class="song-name">10. Grand Funk Railroad - Some Kind of Wonderful 未完成</span>
+                <a class="source-btn" target="_blank" href="">音源跳转</a>
+                <span class="song-name">10. Grand Funk Railroad - Some Kind of Wonderful未完成</span>
                 <audio id="song10" src="">
                 <button class="play-btn" onclick="togglePlay('song10')">播放</button>
             </div>
             <div class="song-item">
-                <span class="song-name">11. Lynyrd Skynyrd - Free Bird 未完成</span>
+                <a class="source-btn" target="_blank" href="">音源跳转</a>
+                <span class="song-name">11. Lynyrd Skynyrd - Free Bird未完成</span>
                 <audio id="song11" src="">
                 <button class="play-btn" onclick="togglePlay('song11')">播放</button>
             </div>
             <div class="song-item">
-                <span class="song-name">12. America - A Horse With No Name 未完成</span>
+                <a class="source-btn" target="_blank" href="">音源跳转</a>
+                <span class="song-name">12. America - A Horse With No Name未完成</span>
                 <audio id="song12" src="">
                 <button class="play-btn" onclick="togglePlay('song12')">播放</button>
             </div>
             <div class="song-item">
-                <span class="song-name">13. The Who - Eminence Front 未完成</span>
+                <a class="source-btn" target="_blank" href="">音源跳转</a>
+                <span class="song-name">13. The Who - Eminence Front未完成</span>
                 <audio id="song13" src="">
                 <button class="play-btn" onclick="togglePlay('song13')">播放</button>
             </div>
             <div class="song-item">
-                <span class="song-name">14. Boston - Smokin' 未完成</span>
+                <a class="source-btn" target="_blank" href="">音源跳转</a>
+                <span class="song-name">14. Boston - Smokin'未完成</span>
                 <audio id="song14" src="">
                 <button class="play-btn" onclick="togglePlay('song14')">播放</button>
             </div>
             <div class="song-item">
-                <span class="song-name">15. David Bowie - Somebody Up There Likes Me 未完成</span>
+                <a class="source-btn" target="_blank" href="">音源跳转</a>
+                <span class="song-name">15. David Bowie - Somebody Up There Likes Me未完成</span>
                 <audio id="song15" src="">
                 <button class="play-btn" onclick="togglePlay('song15')">播放</button>
             </div>
             <div class="song-item">
-                <span class="song-name">16. Eddie Money - Two Tickets to Paradise 未完成</span>
+                <a class="source-btn" target="_blank" href="">音源跳转</a>
+                <span class="song-name">16. Eddie Money - Two Tickets to Paradise未完成</span>
                 <audio id="song16" src="">
                 <button class="play-btn" onclick="togglePlay('song16')">播放</button>
             </div>
             <div class="song-item">
-                <span class="song-name">17. Billy Idol - White Wedding 未完成</span>
+                <a class="source-btn" target="_blank" href="">音源跳转</a>
+                <span class="song-name">17. Billy Idol - White Wedding未完成</span>
                 <audio id="song17" src="">
                 <button class="play-btn" onclick="togglePlay('song17')">播放</button>
             </div>
 
             <div class="tip-text">
-                ⚠️ 版权免责提示：所有音频曲目版权归属Rockstar Games及对应音乐人，本站仅怀旧展示，无商用行为；音频直链待后续补充完整。
-                无本地音源时，可点击「网易云音源/B站音源」跳转对应网页播放歌曲。
+                ⚠️ 版权免责提示：所有音频曲目版权归属Rockstar Games及对应音乐人，本站仅怀旧展示，无商用行为；音频链接待后续补充完整。
+                左侧【音源跳转】可直接前往对应平台收听歌曲。
             </div>
         </div>
 
@@ -281,7 +294,7 @@
     </div>
 
     <script>
-        // 公告弹窗开关
+        // 弹窗基础函数
         function openPop() {
             document.getElementById("popMask").style.display = "flex";
         }
@@ -289,13 +302,12 @@
             document.getElementById("popMask").style.display = "none";
         }
 
-        // 音频互斥播放：同一时间只放一首歌
+        // 播放互斥逻辑（保留原有全部逻辑）
         let currentAudio = null;
         function togglePlay(id) {
             let audio = document.getElementById(id);
-            // 无音频链接时弹出提示
             if(!audio.src){
-                alert("暂无本地音频直链，请点击右侧音源按钮跳转网页收听！");
+                alert("暂无本地音频直链，请点击左侧【音源跳转】前往网页收听！");
                 return;
             }
             if(currentAudio && currentAudio !== audio) currentAudio.pause();
@@ -308,7 +320,30 @@
             }
         }
 
-        // 全局5秒轮询公告，和首页同步通知弹窗
+        // ========== 预埋彩蛋（2个隐藏彩蛋，不会影响正常使用）==========
+        // 彩蛋1：连续按键盘上 CJ 两个键，触发CJ彩蛋弹窗
+        let keyStack = [];
+        document.addEventListener('keydown',function(e){
+            keyStack.push(e.key.toUpperCase());
+            keyStack = keyStack.slice(-2);
+            if(keyStack[0]==="Y" && keyStack[1]==="J"){
+                alert("叶昊哲没急");
+                keyStack = [];
+            }
+        })
+
+        // 彩蛋2：页面停留超过15秒，悄悄弹出一句隐藏寄语（温柔彩蛋）
+        setTimeout(function(){
+            console.log("鸡哲");
+        },15000);
+
+        // 彩蛋3：鼠标双击页面底部footer，触发毕业彩蛋
+        document.querySelector("footer").addEventListener("dblclick",function(){
+            alert("叶昊哲来了！");
+        })
+        // ==========================================================
+
+        // 公告轮询
         function checkNotice(){
             fetch('notice.json?t='+new Date().getTime())
                 .then(res=>res.json())
